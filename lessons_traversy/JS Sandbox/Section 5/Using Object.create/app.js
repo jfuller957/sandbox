@@ -1,47 +1,26 @@
-//Object.prototype
-//Person.prototype
-
-// Person Constuctor
-function Person(firstName, lastName, dob) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.birthday = new Date(dob);
-  // this.calculateAge = function(){
-  //   const diff = Date.now() - this.birthday.getTime();
-  //   const ageDate = new Date(diff);
-  //   return Math.abs(ageDate.getUTCFullYear() - 1970);
-  // };
-}
-
-// Calculate Age
-Person.prototype.calculateAge = function() {
-  const diff = Date.now() - this.birthday.getTime();
-  const ageDate = new Date(diff);
-  return Math.abs(ageDate.getUTCFullYear() - 1970);
+const personPrototypes = {
+  greeting: function() {
+    return `Hello there ${this.firstName} ${this.lastName}`;
+  },
+  getsMarried: function(newLastName) {
+    this.lastName = newLastName;
+  }
 };
 
-// Get Full Name
-Person.prototype.getFullName = function() {
-  return `${this.firstName} ${this.lastName}`;
-};
+const christina = Object.create(personPrototypes);
+christina.firstName = 'Christina';
+christina.lastName = 'Vanderwerken';
+christina.age = 34;
 
-// Gets Married
-Person.prototype.getsMarried = function(newLastName) {
-  this.lastName = newLastName;
-};
+christina.getsMarried('Fuller');
 
-const james = new Person('James', 'Fuller', '12-20-1983');
-const crick = new Person('Christina', 'Vanderwerken', 'November 14 1984');
-console.log(crick);
+console.log(christina.greeting());
 
-console.log(crick);
+const james = Object.create(personPrototypes, {
+  firstName: { value: 'James' },
+  lastName: { value: 'Fuller' },
+  age: { value: 34 }
+});
 
-console.log(james.calculateAge());
-
-console.log(crick.getFullName());
-
-crick.getsMarried('Fuller');
-
-console.log(crick.getFullName());
-
-console.log(crick.hasOwnProperty('firstName'));
+console.log(james);
+console.log(james.greeting());
