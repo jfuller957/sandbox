@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "James Fuller",
+    "company": "Entercom",
+    "phone": "444-444-4441"
+  },
+  {
+    "id": 2,
+    "name": "Christina Vanderwerker",
+    "company": "Palomar College",
+    "phone": "444-444-4442"
+  },
+  {
+    "id": 3,
+    "name": "Michael Hartmeyer",
+    "company": "Novelty Media",
+    "phone": "444-444-4443"
+  }
+]
