@@ -31,8 +31,23 @@ re = /Hel{2,}o/i;   // The letter preceeding the {} must occur at least {m,} tim
 // Parentheses () - Grouping
 re = /([0-9]x){3}/;
 
+// Shorthand Character Classes
+re = /\w/;          // Word character - alphanumeric or _
+re = /\w+/;         // + = one or more
+re = /\W/;          // Non-Word Character
+re = /\d/;          // Match any digit
+re = /\d+/;         // Match and digit 0 or more times
+re = /\D/;          // Match any Non-digit
+re = /\s/;          // Match any whitespace
+re = /\S/;          // Match any Non-whitespace
+re = /Hell\b/i;     // Word Boundary
+
+// Assertions
+re = /x(?=y)/;      // Match x only if followed by y
+re = /x(?!y)/;      // Match x only if NOT followed by y
+
 // String to match
-const str = '3x3x3x';
+const str = 'dlifwjfqdlsxdjdf';
 
 // Log Results
 const result = re.exec(str);
