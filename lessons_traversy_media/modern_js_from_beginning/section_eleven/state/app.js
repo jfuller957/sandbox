@@ -1,17 +1,17 @@
-const PageState = function() {
+const PageState = function () {
   let currentState = new homeState(this);
 
-  this.init = function() {
+  this.init = function () {
     this.change(new homeState);
   }
 
-  this.change = function(state) {
+  this.change = function (state) {
     currentState = state;
   }
 };
 
-// Home State
-const homeState = function(page) {
+// Home State 
+const homeState = function (page) {
   document.querySelector('#heading').textContent = null;
   document.querySelector('#content').innerHTML = `
     <div class="jumbotron">
@@ -27,7 +27,7 @@ const homeState = function(page) {
 };
 
 // About State
-const aboutState = function(page) {
+const aboutState = function (page) {
   document.querySelector('#heading').textContent = 'About Us';
   document.querySelector('#content').innerHTML = `
     <p>This is the about page</p>
@@ -35,7 +35,7 @@ const aboutState = function(page) {
 };
 
 // Contact State
-const contactState = function(page) {
+const contactState = function (page) {
   document.querySelector('#heading').textContent = 'Contact Us';
   document.querySelector('#content').innerHTML = `
   <form>
@@ -60,8 +60,8 @@ page.init();
 
 // UI Vars
 const home = document.getElementById('home'),
-      about = document.getElementById('about'),
-      contact = document.getElementById('contact');
+  about = document.getElementById('about'),
+  contact = document.getElementById('contact');
 
 // Home
 home.addEventListener('click', (e) => {
