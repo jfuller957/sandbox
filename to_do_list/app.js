@@ -9,10 +9,16 @@ It should have a way to delete a todo.
 
 */
 
+// Store in the window
+
+// Display using console.log etc.
+
 let todos = ["item1", "item2", "item3"];
 
-// todos.push("item4");
+// Add a todo todos.push("item4");
 
-todos[0] = "Item 1 updated";
+// Change a Todo todos[0] = "Item 1 updated";
+
+// Delete a todo todos.splice(0, 1);
 
 console.log(todos);
