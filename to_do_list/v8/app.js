@@ -1,7 +1,9 @@
 /*
-It should ...
-toggle all as completed if not, else toggle all incomplete
-toggle all that aren't toggled completed if only some are toggled completed
+It should have working controls for ...
+.addTodo
+.changeTodo
+.deleteTodo
+.toggleCompleted
 */
 
 let todoList = {
@@ -71,24 +73,42 @@ let todoList = {
   }
 };
 
-// Get access to the display todos button
-let displayTodosButton = document.getElementById("displayTodosButton");
-let toggleAllButton = document.getElementById("toggleAllButton");
-
-// Run display todos method when someone clicks the display todos button
-displayTodosButton.addEventListener("click", function() {
-  todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener("click", function() {
-  todoList.toggleAll();
-});
-
 let handlers = {
   displayTodos: function() {
     todoList.displayTodos();
   },
   toggleAll: function() {
     todoList.toggleAll();
+  },
+  addTodo: function() {
+    let addTodoTextInput = document.getElementById("addTodoTextInput");
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = "";
+  },
+  changeTodo: function() {
+    let changeTodoPositionInput = document.getElementById(
+      "changeTodoPositionInput"
+    );
+    let changeTodoTextInput = document.getElementById("changeTodoTextInput");
+    todoList.changeTodo(
+      changeTodoPositionInput.valueAsNumber,
+      changeTodoTextInput.value
+    );
+    changeTodoPositionInput.value = "";
+    changeTodoTextInput.value = "";
+  },
+  deleteTodo: function() {
+    let deleteTodoPositionInput = document.getElementById(
+      "deleteTodoPositionInput"
+    );
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = "";
+  },
+  toggleCompleted: function() {
+    let toggleCompletedPositionInput = document.getElementById(
+      "toggleCompletedPositionInput"
+    );
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = "";
   }
 };
