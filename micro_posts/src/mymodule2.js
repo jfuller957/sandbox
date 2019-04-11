@@ -1,4 +1,8 @@
 export const person = {
-  name: Christina,
+  name: "Christina",
   age: 34
 };
+
+export function sayHello() {
+  return `Hello ${person.name}`;
+}
