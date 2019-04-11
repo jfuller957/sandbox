@@ -6,3 +6,6 @@ export const person = {
 export function sayHello() {
   return `Hello ${person.name}`;
 }
+
+const greeting = "Hello World";
+export default greeting;
