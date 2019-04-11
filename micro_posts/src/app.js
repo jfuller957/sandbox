@@ -1,10 +1,6 @@
-const greeting = 'Hello World';
-console.log(greeting);
+// CommonJS Module Syntax
+// const person = require("./mymodule1");
 
-const getData = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-};
+// ES2015 Module Syntax
 
-getData('https://jsonplaceholder.typicode.com/posts');
+console.log(person.name);
